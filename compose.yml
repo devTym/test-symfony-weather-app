@@ -1,0 +1,11 @@
+services:
+  app:
+    container_name: test_symfony_weather_app
+    build:
+      context: .
+    ports:
+      - "8020:8000"
+    volumes:
+      - .:/var/www
+    working_dir: /var/www
+    command: php -S 0.0.0.0:8000 -t public

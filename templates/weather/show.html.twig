@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Weather in {{ weather.city|default('...')|e }}
+{% endblock %}
+
+{% block body %}
+    <h2>Weather in {{ weather.city|e }}, {{ weather.country|e }}</h2>
+    <ul>
+        <li>Temperature: {{ weather.temperature|default('N/A') }}°C</li>
+        <li>Condition: {{ weather.condition|e }}</li>
+        <li>Humidity: {{ weather.humidity|default('N/A') }}%</li>
+        <li>Wind Speed: {{ weather.wind_speed|default('N/A') }} km/h</li>
+        <li>Last Updated: {{ weather.last_updated|e }}</li>
+    </ul>
+{% endblock %}
